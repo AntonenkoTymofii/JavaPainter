@@ -1,3 +1,5 @@
+package org.example;
+
 import java.awt.*;
 
 public class Cube extends Shape{
