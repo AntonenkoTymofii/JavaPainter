@@ -57,8 +57,6 @@ public class MainWindow extends JFrame {
         JMenuBar menuBar = new JMenuBar();
         JMenu optionsMenu = new JMenu("Draw");
 
-
-
         ButtonGroup buttonGroup = new ButtonGroup();
 
         buttonGroup.add(dotButton);
