@@ -84,7 +84,7 @@ public class MainWindow extends JFrame {
         super.repaint();
     }
 
-    private void clearPanel() {
+    void clearPanel() {
         String message = shapeEditor.getSize() + " figures were cleared";
         shapeEditor.clearShapes();
         repaint();
@@ -92,7 +92,7 @@ public class MainWindow extends JFrame {
         table.clearTable();
     }
 
-    private JPanel getJPanel() {
+    JPanel getJPanel() {
         super.repaint();
         JPanel panel = new JPanel() {
             @Override

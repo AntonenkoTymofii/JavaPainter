@@ -40,6 +40,11 @@ public class MyTable extends JDialog{
         super.add(buttonPanel, BorderLayout.SOUTH);
         super.add(scrollPane, BorderLayout.CENTER);
     }
+
+    public static void setInstance(MyTable table_m) {
+        instance = table_m;
+    }
+
     private JPanel getButtonPanel(ShapeEditor shapeEditor, JTable table) {
         JButton delete = new JButton("Delete");
         delete.addActionListener(e -> {
