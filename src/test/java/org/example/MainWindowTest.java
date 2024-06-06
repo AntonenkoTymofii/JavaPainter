@@ -16,6 +16,7 @@ class MainWindowTest {
 
     @BeforeEach
     void setUp() {
+        System.setProperty("java.awt.headless", "true");
         MyTable.setInstance(table);
         table = mock(MyTable.class);
         mainWindowTest = new MainWindow();
