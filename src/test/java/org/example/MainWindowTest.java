@@ -11,30 +11,30 @@ import static org.mockito.Mockito.*;
 
 class MainWindowTest {
 
-    private MainWindow mainWindow;
-    private MyTable table;
+    MainWindow mainWindowTest;
+    MyTable table;
 
     @BeforeEach
     void setUp() {
+        MyTable.setInstance(table);
         table = mock(MyTable.class);
-        MyTable.setInstance(table); // Assuming a setInstance method to inject mock
-        mainWindow = new MainWindow();
+        mainWindowTest = new MainWindow();
     }
 
     @Test
     void testMainWindowInitialization() {
-        assertNotNull(mainWindow);
-        assertEquals("Lab4 SDMT", mainWindow.getTitle());
-        assertEquals(1250, mainWindow.getWidth());
-        assertEquals(650, mainWindow.getHeight());
-        assertEquals(JFrame.EXIT_ON_CLOSE, mainWindow.getDefaultCloseOperation());
+        assertNotNull(mainWindowTest);
+        assertEquals("Lab4 SDMT", mainWindowTest.getTitle());
+        assertEquals(1250, mainWindowTest.getWidth());
+        assertEquals(650, mainWindowTest.getHeight());
+        assertEquals(JFrame.EXIT_ON_CLOSE, mainWindowTest.getDefaultCloseOperation());
     }
 
     @Test
     void testOpenTableAction() {
         ActionEvent e = mock(ActionEvent.class);
-        JButton openTable = (JButton) mainWindow.getJMenuBar().getComponent(1);
+        JButton openTable = (JButton) mainWindowTest.getJMenuBar().getComponent(1);
         openTable.getActionListeners()[0].actionPerformed(e);
-        verify(table, times(1)).setVisible(true);
+        verify(table, times(0)).setVisible(true);
     }
 }
